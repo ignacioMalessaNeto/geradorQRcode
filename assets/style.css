@@ -1,0 +1,135 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Hind Madurai', sans-serif;
+}
+
+/* Body styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #055aae;
+}
+
+/* Container styles */
+.qr-container {
+    height: 260px;
+    background: rgba(0, 0, 0, 0.596);
+    max-width: 80%;
+    width: 600px;
+    border-radius: 10px;
+    padding: 16px 25px;
+    transition: height 0.5s ease;
+}
+
+.qr-container.active {
+    height: 530px;
+}
+
+/* Header styles */
+.qr-header h1 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 21px;
+    color: antiquewhite;
+}
+
+.qr-header p {
+    text-align: center;
+    margin-top: 5px;
+    color: #d1c6c6;
+    font-size: 16px;
+}
+
+/* Form styles */
+.qr-form {
+    margin: 20px 0 25px;
+}
+
+.qr-form input,
+.qr-form button {
+    width: 100%;
+    height: 55px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.qr-form input {
+    font-size: 18px;
+    padding: 0 17px;
+    border: 3px solid #2d6cac;
+    background: rgb(199, 203, 223);
+}
+
+.qr-form button {
+    color: #000;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 17px;
+    background: #0e7be9;
+}
+
+.qr-form button:hover {
+    background: #2090ff;
+    color: #fff;
+}
+
+/* QR Code display styles */
+.generated-qr-code {
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    padding: 33px 0;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 3px solid #2d6cac;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Adicionando transform para o contêiner */
+    transform-origin: center; /* Define o ponto de origem da transformação */
+}
+
+.qr-img {
+    width: 200px;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Adicionando transform para a imagem */
+    transform: scale(0); /* Começa com escala 0 (invisível) */
+}
+
+/* QR Code display styles */
+.generated-qr-code {
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    padding: 33px 0;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 3px solid #2d6cac;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform-origin: center;
+}
+
+.qr-img {
+    width: 200px;
+    height: auto;
+    opacity: 1;
+    transition: transform 0.5s ease;
+    transform: scale(0);
+}
+
+.qr-container.active .generated-qr-code {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.qr-container.active .qr-img {
+    transform: scale(1);
+}
